@@ -6,7 +6,7 @@ Remember: __Never trust someone else's tests, do your own.__
 #Foreword
 I am not Google.
 I don't own gazillions of servers in a cloud.
-Riak and Aerospike are both awesome databases that scale exceptionally well, however this test doesn't include their performance in a cluster.
+Riak and Aerospike are both awesome databases that scale exceptionally well, however this test doesn't include their performance in a cluster. It also doesn't consider their advanced functionalities like Riak's Map/Reduce or Aerospike's UDF.
 
 This test is about as simple as it can be: You have a __single server__ with a __single CPU__ which is accessing a locally hosted database. This is not realistic for high-end websites, however many small websites and services do have a similar setup.
 
