@@ -8,10 +8,10 @@ I am not Google.
 I don't own gazillions of servers in a cloud.
 Riak and Aerospike are both awesome databases that scale exceptionally well, however this test doesn't include their performance in a cluster.
 
-This test is about as simple as it can be: You have a __single server__ which is accessing the database that is also hosted locally. This is not realistic for high-end websites, however many small websites and services actually do have a setup similar to what I described.
+This test is about as simple as it can be: You have a __single server__ which is accessing a locally hosted database. This is not realistic for high-end websites, however many small websites and services actually do have a similar setup.
 
 #What is important?
-For the particular use case that I chose, since __reading requests represent about 99% of all requests__ for me, reading performance is what I'm interested in. I do not care about writing performance, if you do please run your own tests (you should do that anyway).
+For the particular use case that I chose, because __reading requests represent about 99% of all requests__ for me, reading performance is what I'm interested in. I do not care about writing performance. If you do please run your own tests (you should do that anyway).
 
 #Why are the tests "unfair"?
 Aerospike offers mostly compiled client libs while Riak offers source libs in the targeted programming language.
