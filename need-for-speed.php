@@ -7,7 +7,7 @@
 	$dbConfig = $config['database'];
 	$namespace = $dbConfig['namespace'];
 	$table = $dbConfig['table']
-	$record = null;
+	$record = [];
 
 	$db = new Aerospike($config['aerospike']);
 	
