@@ -1,6 +1,6 @@
 <?php
-    // Aerospike
-    
+	// Aerospike
+	
 	// Load config
 	$config = json_decode(file_get_contents('config.json'), true);
 	
@@ -30,7 +30,7 @@
 ?>
 
 <?php
-    // Riak
-    
-    // TODO
+	// Riak
+	
+	// TODO
 ?>
