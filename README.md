@@ -1,5 +1,5 @@
 # aerospike-vs-riak
-Aerospike libs vs Riak libs. Very simplified, yet realistic tests for small to medium websites/apps.
+__Aerospike libs__ vs __Riak libs__. Very simplified, yet realistic tests for small to medium websites/apps.
 
 Remember: __Never trust someone else's tests, do your own.__
 
@@ -14,9 +14,9 @@ This test is about as simple as it can be: You have a __single server__ which is
 For the particular use case that I chose, because __reading requests represent about 99% of all requests__ for me, reading performance is what I'm interested in. I do not care about writing performance. If you do please run your own tests (you should do that anyway).
 
 #Why are the tests "unfair"?
-Aerospike offers mostly compiled client libs while Riak offers source libs in the targeted programming language.
+Aerospike offers mostly __compiled client libs__ while Riak offers __source libs__ in the targeted programming language.
 Therefore in most cases Aerospike will have a little performance advantage since native modules are faster.
-If you call that "unfair" or not is up to you, however this is not a raw comparison, this test compares their individual libraries.
+If you call that "unfair" or not is up to you, however this is not a raw comparison, this test compares their individual libraries so this aspect needs to be considered when trying to make realistic tests.
 
 #Do it yourself
 * Setup a new droplet on DigitalOcean
@@ -37,17 +37,20 @@ Results:
 __Psssht, Aerospike! Implement node.js 0.12 support, we desperately need it.__
 
 #PHP
-PHP is frowned upon by many developers (myself included) for obvious reasons that I'm not going to list here. However it was interesting for me to test it because I actually own a site that uses this setup.
+PHP is frowned upon by many developers (myself included) for obvious reasons that I'm not going to list here. However it was interesting for me to test it because I own a site that utilizes PHP with a database backend.
 
 Results:
 
-    Iterations: 10,000.
+    Test performed: Get data by key.
+    Riak storage: Bitcask
+    Aerospike storage: device
+    Iterations: 10,000
 
-    Aerospike: 0.0001184355974197 sec/GET
-    Riak:      0.0020599334955215 sec/GET
+    Aerospike: 0.1184355974197 ms/GET
+    Riak:      2.0599334955215 ms/GET
 
 #Python
 TODO
 
 #C/C++
-TODO
+C/C++ is very uncommon for websites. However we could include a test, even if it's just for fun. This would at least eliminate the disadvantage of Riak libs not being native modules.
