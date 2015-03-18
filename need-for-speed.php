@@ -1,4 +1,7 @@
 <?php
+    // Load config
+    $config = json_decode(file_get_contents('config.json'), true);
+    
 	// Setup
     $iterations = $config['iterations'];
     $dbConfig = $config['database'];
@@ -6,13 +9,13 @@
     $table = $dbConfig['table']
     $record = null;
 
-	$db = new Aerospike($config['aeroSpike']);
+	$db = new Aerospike($config['aerospike']);
     
     // Start
 	$before = microtime(true);
 
 	for($i = 0; $i < $iterations; $i++) {
-        $keyName = ($i % 2) ? 'test_1' : 'test_2';
+        $keyName = "test_$i";
 		$key = $db->initKey($namespace, $table, $keyName);
 		$db->get($key, $record);
 		$data = $record['bins'];
@@ -21,5 +24,5 @@
     // End
 	$after = microtime(true);
     
-	echo ($after - $before) / $i . ' sec/GET<br>';
+	echo 'Aerospike: ' . ($after - $before) / $i . ' sec/GET<br>';
 ?>
